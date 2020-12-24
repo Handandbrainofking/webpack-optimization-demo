@@ -1,5 +1,5 @@
-function request() {
-    console.log('hello,weex!')
+function getOptionConfig() {
+    console.log('options: hello,weex!')
 }
 
-request()
+getOptionConfig()
