@@ -2,15 +2,12 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const UglifyJsPlugin = require('terser-webpack-plugin');
 const webpack = require('webpack');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
-const VueLoader = require('vue-loader');
 
 
 module.exports = {
-	mode: 'production',
-	// watch: true, // 监听代码更改，动态打包
+	mode: 'development',
 	entry: path.resolve(__dirname, './src/main.js'),
 	output: {
 		path: path.resolve('./dist'),
@@ -43,27 +40,7 @@ module.exports = {
             template: './web/index.html'
         })
     ],
-	optimization: {
-		minimize: true,
-		minimizer: [
-			new UglifyJsPlugin({
-				cache: true,
-				parallel: true,
-				sourceMap: false,
-				terserOptions: {
-					mangle: true,
-					compress: {
-						unused: true,
-						warnings: false,
-						drop_debugger: true,
-					},
-					output: {
-						comments: /^\**!|\"framework\"/i,
-					},
-				},
-			}),
-        ], 
-    },
+	optimization: {},
     node: {
         setImmediate: false,
         dgram: 'empty',
