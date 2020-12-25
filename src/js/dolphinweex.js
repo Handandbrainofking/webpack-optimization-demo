@@ -7,3 +7,7 @@
 export function request1() {
     console.log('http request')
 }
+
+export function traverse() {
+    console.log('Parse')
+}

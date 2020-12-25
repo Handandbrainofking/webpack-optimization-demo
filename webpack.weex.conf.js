@@ -5,8 +5,8 @@ const webpack = require('webpack');
 
 
 module.exports = {
-	mode: 'production',
-	watch: true,
+	mode: 'development',
+	// watch: true, // 监听代码更改，动态打包
 	entry: path.resolve(__dirname, './src/main.js'),
 	output: {
 		path: path.resolve('./dist'),
@@ -26,7 +26,9 @@ module.exports = {
 		    raw: true,
 		})],
 	optimization: {
-		minimize: true,
+        // 优化导出的模块
+        usedExports: true,
+		// minimize: true,
 		minimizer: [
 			new UglifyJsPlugin({
 				cache: true,
@@ -47,6 +49,7 @@ module.exports = {
 					},
 				},
 			}),
-		],
+        ],
+        
 	},
 };

@@ -7,6 +7,7 @@
     "build": "webpack",
     "weex": "webpack --config webpack.weex.conf.js"
   },
+  "sideEffects": false,
   "keywords": [
     "webpack4",
     "weex",

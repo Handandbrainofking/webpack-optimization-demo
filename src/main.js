@@ -5,4 +5,4 @@ function getOptionConfig() {
 }
 
 getOptionConfig()
-request()
+request1()
