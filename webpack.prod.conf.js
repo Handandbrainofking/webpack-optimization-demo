@@ -6,7 +6,7 @@ const webpack = require('webpack');
 
 
 module.exports = {
-	mode: 'development',
+	mode: 'production',
 	// watch: true, // 监听代码更改，动态打包
 	entry: path.resolve(__dirname, './src/main.js'),
 	output: {
@@ -27,17 +27,12 @@ module.exports = {
 		    raw: true,
 		})],
 	optimization: {
-        // 优化导出的模块
-        usedExports: true,
-		// minimize: true,
+		minimize: true,
 		minimizer: [
 			new UglifyJsPlugin({
 				cache: true,
 				parallel: true,
 				sourceMap: false,
-				// extractComments: {
-				//   banner: '// { "framework": "Vue" } \n'
-				// },
 				terserOptions: {
 					mangle: true,
 					compress: {

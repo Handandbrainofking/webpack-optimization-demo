@@ -5,7 +5,8 @@
   "main": "main.js",
   "scripts": {
     "build": "webpack",
-    "weex": "webpack --config webpack.weex.conf.js"
+    "weex": "webpack --config webpack.weex.conf.js",
+    "build:prod": "webpack --config webpack.prod.conf.js"
   },
   "sideEffects": false,
   "keywords": [
