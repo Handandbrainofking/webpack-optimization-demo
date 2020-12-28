@@ -4,10 +4,10 @@
   "description": "webpack4 optimization babel7",
   "main": "main.js",
   "scripts": {
-    "dev":"webpack-dev-server --config webpack.dev.conf.js ",
+    "dev": "webpack --config webpack.dev.conf.js ",
     "build": "webpack",
-    "weex": "webpack --config webpack.weex.conf.js",
-    "build:prod": "webpack --config webpack.prod.conf.js"
+    "build:prod": "webpack --config webpack.prod.conf.js",
+    "weex": "webpack --config webpack.weex.conf.js"
   },
   "sideEffects": false,
   "keywords": [
@@ -19,7 +19,8 @@
   "author": "zoiew <wscats@126.com> (https://github.com/zoiewLeung)",
   "license": "MIT",
   "dependencies": {
-    "vue": "^2.6.12"
+    "vue": "^2.6.12",
+    "weex-vue-render": "^1.0.36"
   },
   "devDependencies": {
     "clean-webpack-plugin": "^3.0.0",
@@ -34,6 +35,7 @@
     "webpack-bundle-analyzer": "^3.0.2",
     "webpack-cli": "^3.1.0",
     "webpack-dev-server": "^3.1.8",
-    "webpack-merge": "^5.7.3"
+    "webpack-merge": "^5.7.3",
+    "weex-loader": "^0.7.12"
   }
 }
