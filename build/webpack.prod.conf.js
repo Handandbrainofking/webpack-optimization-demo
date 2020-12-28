@@ -1,7 +1,7 @@
 const {merge} = require('webpack-merge')
+const baseConfig = require('./webpack.base.conf.js')
 const UglifyJsPlugin = require('terser-webpack-plugin');
 
-const baseConfig = require('./webpack.base.conf.js')
 
 module.exports = merge(baseConfig,{
     mode: 'production',

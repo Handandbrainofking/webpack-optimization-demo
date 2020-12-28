@@ -4,10 +4,11 @@
   "description": "webpack4 optimization babel7",
   "main": "main.js",
   "scripts": {
-    "dev": "webpack --config webpack.dev.conf.js ",
-    "build": "webpack",
-    "build:prod": "webpack --config webpack.prod.conf.js",
-    "weex": "webpack --config webpack.weex.conf.js"
+    "dev": "webpack --config build/webpack.dev.conf.js ",
+    "build": "webpack --config build/webpack.dev.conf.js",
+    "build:prod": "webpack --config build/webpack.prod.conf.js",
+    "weex": "webpack --config webpack.weex.conf.js",
+    "clean": "rimraf dist"
   },
   "sideEffects": false,
   "keywords": [

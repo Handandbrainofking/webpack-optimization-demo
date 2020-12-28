@@ -4,19 +4,19 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const webpack = require('webpack');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
+const VueLoader = require('vue-loader');
 
 
 module.exports = {
-	mode: 'development',
-	entry: path.resolve(__dirname, './src/main.js'),
+	entry: path.resolve(__dirname, '../src/main.js'),
 	output: {
-		path: path.resolve('./dist'),
+		path: path.resolve(__dirname, '../dist'),
 		filename: '[name].[hash:6].js',
 	},
 	resolve: {
 		extensions: ['.js', '.vue', '.json'],
 		alias: {
-			'@': path.resolve(__dirname, './src'),
+			'@': path.resolve(__dirname, '../src'),
 		},
 	},
 	module: {
@@ -25,7 +25,11 @@ module.exports = {
                 test: /\.vue$/,
                 loader: 'vue-loader',
                 options: {}
-            }
+            },
+            // {
+            //     test: /\.js$/,
+            //     loader: 'babel-loader'
+            // }
         ]
     },
     plugins: [
@@ -40,7 +44,6 @@ module.exports = {
             template: './web/index.html'
         })
     ],
-	optimization: {},
     node: {
         setImmediate: false,
         dgram: 'empty',
